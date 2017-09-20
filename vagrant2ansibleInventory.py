@@ -10,7 +10,7 @@ def iterate_ssh_configs():
     for status in statuses:
         name = status[0]
         machine_status = status[1]
-        if machine_status == 'not_created':
+        if machine_status in ('not_created', 'poweroff'):
             continue
         ssh_conf_1 = va.ssh_config(vm_name=name)
 
